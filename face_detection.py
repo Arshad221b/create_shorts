@@ -70,7 +70,7 @@ class detect_face():
     def get_video(self):
         result = cv2.VideoWriter('output2.avi', cv2.VideoWriter_fourcc(*"MJPG"), 30.0, (202,360))
 
-        cap = cv2.VideoCapture('test_video.mp4')
+        cap = cv2.VideoCapture('avengers2.mp4')
         if (cap.isOpened()== False): 
             print("Error opening video  file")
         all_x = [[0,0]]
