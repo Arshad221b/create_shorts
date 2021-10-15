@@ -1,20 +1,17 @@
-import numpy as np 
-import pandas as pd
-import cv2
 from mtcnn.mtcnn import MTCNN
-
 # detect face
 #     |-detect all faces
 #     |-get the required face
-    
 
-class detect_face():
+class DetectFace():
     def __init__(self, img) -> None:
         self.img = img
+
 
     def required_face(self, faces):                         # face should have maximum area
         max_area = 0
         max_face = (0,0,0,0)
+
         for face in faces:
             x, y, w, h = face['box']
             area = w*h
@@ -38,6 +35,7 @@ class detect_face():
 
         return face
 
-# img  = cv2.imread('test.jpg')
-# f = detect_face(img)
+# import cv2
+# img     = cv2.imread('test.jpg')
+# f       = DetectFace(img)
 # print(f.detect_req_face())
